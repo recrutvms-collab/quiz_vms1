@@ -87,12 +87,12 @@ function renderQuestion(id) {
   document.querySelectorAll(".option-btn").forEach(btn => {
     btn.addEventListener("click", () => {
       history.push(currentId);
+      const next = btn.dataset.next;
       gtag('event', 'quiz_answer', {
         project_name: 'vmsjobs',
         question_id: currentId,
         answer_next: next
       });
-      const next = btn.dataset.next;
       goTo(next);
     });
   });
